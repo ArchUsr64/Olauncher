@@ -257,7 +257,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             val usageStatsManager = appContext.getSystemService(USAGE_STATS_SERVICE) as UsageStatsManager
 
             val calendar = Calendar.getInstance()
-            calendar.set(Calendar.HOUR_OF_DAY, 0)
+            /*
+                Somehow setting startTime past 1AM fixes #545 on my Samsung F12 with Android 13
+                Likely caused by https://issuetracker.google.com/issues/118564471
+            */
+            calendar.set(Calendar.HOUR_OF_DAY, 1)
             calendar.set(Calendar.MINUTE, 0)
             calendar.set(Calendar.SECOND, 0)
 
