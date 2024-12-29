@@ -52,6 +52,7 @@ object Constants {
         const val FIVE = 1.1f
         const val SIX = 1.2f
         const val SEVEN = 1.3f
+        const val EIGHT = 1.5f
     }
 
     object CharacterIndicator{
